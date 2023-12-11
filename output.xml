@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.12.0 on darwin)" generated="20231211 17:31:31.685" rpa="false" schemaversion="4">
+<suite id="s1" name="test 01 Demo" source="/Users/nazmulmahealam/PycharmProjects/JustATestProject/demo-project/tests/test_01_Demo.robot">
+<test id="s1-t1" name="Validate Unsuccessful Login" line="8">
+<kw name="Open The Browser With The Mortage Payment Url">
+<kw name="Create Webdriver" library="SeleniumLibrary">
+<arg>Chrome</arg>
+<doc>Creates an instance of Selenium WebDriver.</doc>
+<msg timestamp="20231211 17:31:32.069" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20231211 17:31:32.069" endtime="20231211 17:31:35.797"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>https://rahulshettyacademy.com/loginpagePractise/#</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<msg timestamp="20231211 17:31:35.798" level="INFO">Opening url 'https://rahulshettyacademy.com/loginpagePractise/#'</msg>
+<status status="PASS" starttime="20231211 17:31:35.798" endtime="20231211 17:31:37.115"/>
+</kw>
+<status status="PASS" starttime="20231211 17:31:32.069" endtime="20231211 17:31:37.116"/>
+</kw>
+<kw name="File The Login Form">
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:username</arg>
+<arg>nazmulmahealam</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231211 17:31:37.117" level="INFO">Typing text 'nazmulmahealam' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20231211 17:31:37.116" endtime="20231211 17:31:37.638"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id:password</arg>
+<arg>123456</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20231211 17:31:37.638" level="INFO">Typing text '123456' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20231211 17:31:37.638" endtime="20231211 17:31:37.735"/>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<arg>signInBtn</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<msg timestamp="20231211 17:31:37.736" level="INFO">Clicking button 'signInBtn'.</msg>
+<status status="PASS" starttime="20231211 17:31:37.735" endtime="20231211 17:31:37.832"/>
+</kw>
+<status status="PASS" starttime="20231211 17:31:37.116" endtime="20231211 17:31:37.832"/>
+</kw>
+<kw name="Wait Until It Checks And Display Error Message">
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>css:.alert-danger</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20231211 17:31:37.833" endtime="20231211 17:31:39.859"/>
+</kw>
+<status status="PASS" starttime="20231211 17:31:37.833" endtime="20231211 17:31:39.859"/>
+</kw>
+<kw name="Verify Error Message Is Correct">
+<kw name="Get Text" library="SeleniumLibrary">
+<var>${errorMessage}</var>
+<arg>css:.alert-danger</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<msg timestamp="20231211 17:31:39.894" level="INFO">${errorMessage} = Incorrect username/password.</msg>
+<status status="PASS" starttime="20231211 17:31:39.860" endtime="20231211 17:31:39.894"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${errorMessage}</arg>
+<arg>Incorrect username/password.</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" starttime="20231211 17:31:39.894" endtime="20231211 17:31:39.895"/>
+</kw>
+<status status="PASS" starttime="20231211 17:31:39.859" endtime="20231211 17:31:39.896"/>
+</kw>
+<status status="PASS" starttime="20231211 17:31:32.068" endtime="20231211 17:31:39.896"/>
+</test>
+<doc>To validate the login form</doc>
+<status status="PASS" starttime="20231211 17:31:31.689" endtime="20231211 17:31:39.897"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="test 01 Demo">test 01 Demo</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
